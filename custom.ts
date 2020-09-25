@@ -42,7 +42,7 @@ namespace SDS011 {
         for (let index = 2; index <= 7; index++) {
         temp += bufr[index]
     	}
-    temp = temp & 0x0F;
+    temp = temp % 256
 	return temp == bufr[8];
 }
 
@@ -62,7 +62,7 @@ namespace SDS011 {
     //% weight=40
     //% block="PM 2.5"
     export function DataPM25 () {
-	return Calc16bitNumber(3);
+	return Math.round(Calc16bitNumber(3)/10)
 }
 
     /**
@@ -71,10 +71,10 @@ namespace SDS011 {
     //% weight=30
     //% block="PM 10"
     export function DataPM10 () {
-	return Calc16bitNumber(5);
+	return Math.round(Calc16bitNumber(5)/10)
 }
 
-let bufr = pins.createBuffer(10);
+let bufr: Buffer = null
 
 function Calc16bitNumber (num: number) {
     return bufr[num] * 256 + bufr[num - 1];
