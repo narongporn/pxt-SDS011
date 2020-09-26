@@ -14,11 +14,11 @@ namespace SDS011 {
     }
 
     /**
-     * define start character
+     * define end character
      */
     //% weight=90
-    //% block="start character"
-    export function StartCharacter () {
+    //% block="message tail"
+    export function MessageTail () {
         return String.fromCharCode(0xAB)
     }
 
@@ -28,7 +28,7 @@ namespace SDS011 {
     //% weight=80
     //% block="read data"
     export function ReadData (): void {
-        data = serial.readBuffer(10)
+        data = serial.readUntil(String.fromCharCode(0xAB))
     }
 
     /**
