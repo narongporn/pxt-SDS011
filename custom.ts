@@ -74,7 +74,7 @@ namespace SDS011 {
 	return Math.round(Calc16bitNumber(5)/10)
 }
 
-let data: Buffer = null
+let bufr: Buffer = null
 
 function Calc16bitNumber (num: number) {
     return bufr[num] * 256 + bufr[num - 1];
