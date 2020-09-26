@@ -14,7 +14,7 @@ namespace SDS011 {
     }
 
     /**
-     * Read data from sensor and save to buffer
+     * define start character
      */
     //% weight=90
     //% block="start character"
@@ -74,7 +74,7 @@ namespace SDS011 {
 	return Math.round(Calc16bitNumber(5)/10)
 }
 
-let bufr: Buffer = null
+let data: Buffer = null
 
 function Calc16bitNumber (num: number) {
     return bufr[num] * 256 + bufr[num - 1];
