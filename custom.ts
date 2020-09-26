@@ -29,6 +29,7 @@ namespace SDS011 {
     //% block="read data"
     export function ReadData (): void {
         data = serial.readBuffer(10)
+	    test = serial.readBuffer(10)
     }
 
     /**
