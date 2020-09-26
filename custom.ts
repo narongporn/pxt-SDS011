@@ -74,7 +74,7 @@ namespace SDS011 {
 	return Math.round(Calc16bitNumber(5)/10)
 }
 
-let data=pins.createBuffer(10)
+let data=pins.createBuffer(20)
 
 function Calc16bitNumber (num: number) {
     return data[num] * 256 + data[num - 1];
