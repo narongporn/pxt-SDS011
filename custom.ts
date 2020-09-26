@@ -43,7 +43,7 @@ namespace SDS011 {
         temp += data[index]
     	}
     temp = temp % 256
-	return temp == data[8];
+	return temp == data[8]
 }
 
     /**
@@ -77,7 +77,7 @@ namespace SDS011 {
 let data=pins.createBuffer(10)
 
 function Calc16bitNumber (num: number) {
-    return data[num] * 256 + data[num - 1];
+    return data[num] * 256 + data[(num - 1)]
 }
 
 }
