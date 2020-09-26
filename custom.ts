@@ -29,7 +29,6 @@ namespace SDS011 {
     //% block="read data"
     export function ReadData (): void {
         data = serial.readBuffer(10)
-	    test = serial.readBuffer(10)
     }
 
     /**
@@ -76,7 +75,6 @@ namespace SDS011 {
 }
 
 let data=pins.createBuffer(10)
-let test=pins.createBuffer(10)
 
 function Calc16bitNumber (num: number) {
     return data[num] * 256 + data[(num - 1)]
