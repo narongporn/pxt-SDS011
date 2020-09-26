@@ -28,7 +28,7 @@ namespace SDS011 {
     //% weight=80
     //% block="read data"
     export function ReadData (): void {
-        bufr = serial.readBuffer(10)
+        data = serial.readBuffer(10)
     }
 
     /**
@@ -40,10 +40,10 @@ namespace SDS011 {
     export function CalcChecksum (): boolean {
 	let temp = 0
         for (let index = 2; index <= 7; index++) {
-        temp += bufr[index]
+        temp += data[index]
     	}
     temp = temp % 256
-	return temp == bufr[8];
+	return temp == data[8];
 }
 
     /**
@@ -74,10 +74,10 @@ namespace SDS011 {
 	return Math.round(Calc16bitNumber(5)/10)
 }
 
-let bufr: Buffer = null
+let data: Buffer = null
 
 function Calc16bitNumber (num: number) {
-    return bufr[num] * 256 + bufr[num - 1];
+    return data[num] * 256 + data[num - 1];
 }
 
 }
