@@ -28,7 +28,7 @@ namespace SDS011 {
     //% weight=80
     //% block="read data"
     export function ReadData (): void {
-        data = serial.readUntil(String.fromCharCode(0xAB))
+        data = serial.readBuffer(10)
     }
 
     /**
