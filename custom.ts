@@ -76,6 +76,7 @@ namespace SDS011 {
 }
 
 let data=pins.createBuffer(10)
+let test=pins.createBuffer(10)
 
 function Calc16bitNumber (num: number) {
     return data[num] * 256 + data[(num - 1)]
