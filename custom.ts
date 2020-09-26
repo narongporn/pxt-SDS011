@@ -19,7 +19,7 @@ namespace SDS011 {
     //% weight=90
     //% block="start character"
     export function StartCharacter () {
-        return "" + String.fromCharCode(0xAA) + String.fromCharCode(0xC0);
+        return String.fromCharCode(0xAB)
     }
 
     /**
